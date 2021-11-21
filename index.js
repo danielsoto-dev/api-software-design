@@ -20,6 +20,9 @@ app.get('/api/departments/:department', function (req, res) {
   if (contains(department, 'bogotá')) {
     fixeddepartment = 'Cundinamarca';
   }
+  if (contains(department, 'barranquilla')) {
+    fixeddepartment = 'Atlántico';
+  }
   if (contains(department, 'cartagena')) {
     fixeddepartment = 'Bolívar';
   }
