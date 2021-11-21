@@ -29,6 +29,7 @@ app.get('/api/departments/:department', function (req, res) {
   if (contains(department, 'santa marta')) {
     fixeddepartment = 'Magdalena';
   }
+  fixeddepartment ??= department;
   const response = {
     original: department,
     fixeddepartment,
