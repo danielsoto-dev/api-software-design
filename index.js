@@ -12,26 +12,26 @@ app.get('/', function (req, res) {
 const contains = (string, substr) => {
   return string.toLowerCase().includes(substr);
 };
-app.get('/api/deparments/:deparment', function (req, res) {
+app.get('/api/departments/:department', function (req, res) {
   const {
-    params: { deparment },
+    params: { department },
   } = req;
-  let fixedDeparment;
-  if (contains(deparment, 'bogotá')) {
-    fixedDeparment = 'Cundinamarca';
+  let fixeddepartment;
+  if (contains(department, 'bogotá')) {
+    fixeddepartment = 'Cundinamarca';
   }
-  if (contains(deparment, 'cartagena')) {
-    fixedDeparment = 'Bolívar';
+  if (contains(department, 'cartagena')) {
+    fixeddepartment = 'Bolívar';
   }
-  if (contains(deparment, 'buenaventura')) {
-    fixedDeparment = 'Valle del Cauca';
+  if (contains(department, 'buenaventura')) {
+    fixeddepartment = 'Valle del Cauca';
   }
-  if (contains(deparment, 'santa marta')) {
-    fixedDeparment = 'Magdalena';
+  if (contains(department, 'santa marta')) {
+    fixeddepartment = 'Magdalena';
   }
   const response = {
-    original: deparment,
-    fixedDeparment,
+    original: department,
+    fixeddepartment,
   };
   res.json(response);
 });
